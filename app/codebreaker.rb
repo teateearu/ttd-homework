@@ -18,16 +18,17 @@ class Codebreaker
         output.puts "Try guessing a number with four digits"
       end
 
-      result = []
+      result = ''
 
-	    for i in 0..3
+      for i in 0..3
         if input[i] == @secret_number[i]
           result << '+'
         elsif @secret_number.include? input[i]
           result << '-'
         end
       end
-      output.puts result.join
+
+      output.puts result.split('').join('')
     end
   end
 end
