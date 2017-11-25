@@ -16,9 +16,14 @@ class Codebreaker
     def guess(input)
       if input.length < 4 || input.length > 4
         output.puts "Try guessing a number with four digits"
-      else
-        input != @secret_number
-        output.puts ''
+      end
+
+      for i in 0..3
+        if input.byteslice(i) == @secret_number.byteslice(i)
+          output.puts '+'
+        elsif @secret_number.include? input.byteslice(i)
+          output.puts '-'
+        end
       end
     end
   end
