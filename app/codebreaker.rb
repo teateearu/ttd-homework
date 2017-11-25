@@ -22,13 +22,13 @@ class Codebreaker
 
       for i in 0..3
         if input[i] == @secret_number[i]
-          result << '+'
+          result = result + '+'
         elsif @secret_number.include? input[i]
-          result << '-'
+          result = result + '-'
         end
       end
 
-      output.puts result.split('').join('')
+      output.puts result.split('').sort.join
     end
   end
 end
