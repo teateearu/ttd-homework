@@ -14,8 +14,9 @@ class Codebreaker
     end
 
     def guess(input)
-      if input.length < 4 || input.length > 4
+      if input.length != 4
         output.puts "Try guessing a number with four digits"
+        return
       end
 
       result = ''
@@ -27,7 +28,6 @@ class Codebreaker
           result += '-'
         end
       end
-
       output.puts result.split('').sort.join
     end
   end
